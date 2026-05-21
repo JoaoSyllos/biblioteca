@@ -19,11 +19,13 @@ export async function getCatalog(): Promise<Book[]> {
 }
 
 export async function saveCatalog(books: Book[]): Promise<void> {
+  const { blobs } = await list({ prefix: CATALOG_PATHNAME, limit: 1 });
+  const existing = blobs.find((b) => b.pathname === CATALOG_PATHNAME);
+  if (existing) await del(existing.url);
   await put(CATALOG_PATHNAME, JSON.stringify(books, null, 2), {
     access: 'public',
     contentType: 'application/json',
     addRandomSuffix: false,
-    allowOverwrite: true,
   });
 }
 
