@@ -1,0 +1,397 @@
+.page {
+  min-height: 100vh;
+  padding: 0 0 6rem;
+}
+
+/* === HEADER === */
+.header {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--rule);
+  background: var(--paper);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(8px);
+  background: rgba(244, 241, 234, 0.92);
+}
+
+.headerInner {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.brand {
+  display: flex;
+  align-items: baseline;
+  gap: 0.9rem;
+}
+
+.brandMark {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-style: italic;
+  font-size: 1.6rem;
+  letter-spacing: -0.02em;
+}
+
+.brandNum {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: var(--ink-mute);
+  text-transform: uppercase;
+}
+
+.adminLink {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  transition: color 0.2s;
+}
+
+.adminLink:hover {
+  color: var(--ink);
+}
+
+/* === HERO === */
+.hero {
+  padding: clamp(4rem, 12vw, 9rem) 0 clamp(3rem, 8vw, 6rem);
+  border-bottom: 2px solid var(--ink);
+  position: relative;
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+@media (min-width: 900px) {
+  .heroGrid {
+    grid-template-columns: 1fr 0.7fr;
+    gap: 5rem;
+    align-items: end;
+  }
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.eyebrow::before {
+  content: '';
+  width: 1.8rem;
+  height: 1px;
+  background: var(--ink-mute);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(3rem, 11vw, 8.5rem);
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+  margin-bottom: 1.5rem;
+}
+
+.titleItalic {
+  font-style: italic;
+  font-variation-settings: 'opsz' 144, 'SOFT' 50, 'WONK' 1;
+  color: var(--accent);
+}
+
+.lede {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  line-height: 1.5;
+  color: var(--ink-soft);
+  max-width: 38ch;
+  font-style: italic;
+}
+
+.heroMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding-bottom: 0.5rem;
+}
+
+.metaRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.metaLabel {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+
+.metaValue {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1rem;
+}
+
+.metaCount {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  line-height: 1;
+  font-weight: 300;
+}
+
+/* === SEÇÃO ACERVO === */
+.sectionHead {
+  padding: clamp(2.5rem, 5vw, 4rem) 0 clamp(1.5rem, 3vw, 2.5rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  letter-spacing: -0.02em;
+}
+
+.sectionTitle em {
+  font-style: italic;
+  color: var(--ink-mute);
+  font-weight: 300;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 0.4rem;
+  min-width: 240px;
+}
+
+.searchInput {
+  background: none;
+  border: none;
+  outline: none;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1rem;
+  width: 100%;
+  color: var(--ink);
+}
+
+.searchInput::placeholder {
+  color: var(--ink-faint);
+}
+
+.searchIcon {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--ink-mute);
+  letter-spacing: 0.1em;
+}
+
+/* === LISTAGEM DE LIVROS === */
+.catalog {
+  border-top: 2px solid var(--ink);
+}
+
+.bookRow {
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+  gap: 1.5rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--rule);
+  transition: background 0.3s ease;
+  position: relative;
+}
+
+@media (min-width: 700px) {
+  .bookRow {
+    grid-template-columns: 6rem 1fr 0.4fr 0.3fr;
+    gap: 2.5rem;
+    align-items: baseline;
+  }
+}
+
+.bookRow:hover {
+  background: var(--paper-deep);
+  margin: 0 calc(var(--gutter) * -1);
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+
+.bookNum {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  color: var(--ink-mute);
+  align-self: start;
+  padding-top: 0.5rem;
+}
+
+.bookMain {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.bookTitle {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.bookTitle em {
+  font-style: italic;
+  font-variation-settings: 'opsz' 144, 'SOFT' 80;
+}
+
+.bookAuthor {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--ink-mute);
+  margin-top: 0.2rem;
+}
+
+.bookDesc {
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+  margin-top: 0.6rem;
+  max-width: 60ch;
+}
+
+.bookYear {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--ink-mute);
+  align-self: start;
+  padding-top: 0.6rem;
+}
+
+.bookAction {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  align-self: start;
+  padding-top: 0.7rem;
+  transition: gap 0.25s ease;
+}
+
+.bookRow:hover .bookAction {
+  gap: 0.9rem;
+}
+
+.bookAction::after {
+  content: '→';
+  font-family: var(--font-display);
+  font-style: normal;
+}
+
+/* === ESTADO VAZIO === */
+.empty {
+  padding: 6rem 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.emptyTitle {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: var(--ink-mute);
+  letter-spacing: -0.02em;
+}
+
+.emptyText {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--ink-mute);
+  max-width: 40ch;
+}
+
+.emptyLink {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 0.3rem;
+  margin-top: 1rem;
+}
+
+/* === FOOTER === */
+.footer {
+  padding: 4rem 0 0;
+  margin-top: 6rem;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* === ANIMAÇÕES === */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero, .sectionHead, .bookRow {
+  animation: fadeUp 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
+}
+
+.bookRow:nth-child(1) { animation-delay: 0.05s; }
+.bookRow:nth-child(2) { animation-delay: 0.1s; }
+.bookRow:nth-child(3) { animation-delay: 0.15s; }
+.bookRow:nth-child(4) { animation-delay: 0.2s; }
+.bookRow:nth-child(5) { animation-delay: 0.25s; }
+.bookRow:nth-child(n+6) { animation-delay: 0.3s; }

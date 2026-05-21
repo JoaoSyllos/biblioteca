@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..900,0..100,0..1&family=GT+Walsheim&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=switzer@400,500,600,700&f[]=gambarino@400&display=swap');
+
+:root {
+  /* Paleta editorial */
+  --paper: #f4f1ea;
+  --paper-deep: #ece7dc;
+  --ink: #1a1814;
+  --ink-soft: #2d2924;
+  --ink-mute: #6b6358;
+  --ink-faint: #a8a094;
+  --rule: #d4cdbe;
+  --accent: #8b3a1f;
+  --accent-soft: #b8704e;
+
+  /* Tipografia */
+  --font-display: 'Fraunces', 'Times New Roman', serif;
+  --font-body: 'Switzer', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  /* Espaçamento */
+  --measure: 65ch;
+  --gutter: clamp(1.5rem, 4vw, 4rem);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.55;
+  font-feature-settings: 'ss01', 'ss02', 'cv01';
+  min-height: 100vh;
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(26, 24, 20, 0.025) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+::selection {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: inherit;
+}
+
+input, textarea {
+  font-family: inherit;
+  color: inherit;
+}
+
+/* Utilitários */
+.serif {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.rule {
+  height: 1px;
+  background: var(--rule);
+  border: none;
+  width: 100%;
+}
+
+.rule-thick {
+  height: 2px;
+  background: var(--ink);
+  border: none;
+  width: 100%;
+}
+
+/* Container */
+.shell {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
